@@ -1,0 +1,225 @@
+.navbar-brand {
+  width: 20%;
+}
+.logo {
+  width: 100%;
+}
+
+.navbar {
+  top: 0%;
+  position: sticky;
+  width: 100%;
+  z-index: 100;
+}
+
+.form-control {
+  width: 365px;
+  height: 34px;
+}
+
+.nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.d-flex {
+  margin-left: 279px;
+}
+
+.navbar-toggler {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  transition: 0.5s ease-in-out;
+}
+
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none;
+  box-shadow: none;
+  border: 0;
+}
+
+.navbar-toggler span {
+  margin: 0;
+  padding: 0;
+}
+
+.toggler-icon {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #d3531a;
+  border-radius: 1px;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+.middle-bar {
+  margin-top: 0px;
+}
+
+/* when navigation is clicked */
+.navbar-toggler .top-bar {
+  margin-top: 0px;
+  transform: rotate(135deg);
+}
+
+.navbar-toggler .middle-bar {
+  opacity: 0;
+  left: -60px;
+  filter: alpha(opacity=0);
+}
+
+.navbar-toggler .bottom-bar {
+  margin-top: 0;
+  transform: rotate(-135deg);
+}
+
+/* State when the navbar collapsed */
+.navbar-toggler.collapsed .top-bar {
+  margin-top: -17px;
+  transform: rotate(0deg);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  left: 0px;
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+  margin-top: 17px;
+  transform: rotate(0deg);
+}
+
+.btn:focus {
+  /* outline: none; */
+  box-shadow: none;
+}
+
+.speedDial {
+  position: fixed;
+  right: 3vmax;
+  top: 1.5vmax;
+}
+
+.speedDialIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  bottom: 0px;
+  width: 83%;
+  height: 2px;
+  background-color: #fff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+/* .wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 4rem;
+  height: 100px;
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  left: 33.65rem;
+  transform: translateY(-50%);
+  color: black;
+  padding: 0.25rem 0.5rem;
+  pointer-events: none;
+  transition: all 0.35s;
+}
+
+.material-icons {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  font-size: 1.675rem;
+  color: black;
+  transition: all 0.35s;
+}
+
+.wrapper > input {
+  height: inherit;
+  width: 16rem;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  outline: none;
+  background: transparent;
+  color: #f7f7f7;
+  font-size: 1rem;
+  text-indent: 1rem;
+  transition: all 0.35s;
+}
+
+.wrapper > input:focus {
+  border-color: #8f44fd;
+}
+
+.wrapper > input:focus ~ .label {
+  background: white;
+  color: rgba(0, 0, 0, 0.75);
+  transform: translateY(-1.875rem);
+}
+
+
+@media only screen and (max-width: 600px) {
+  .label {
+    top: 47%;
+    left: 2.99rem;
+  }
+} */
+
+@media screen and (max-width: 600px) {
+  .navbar-brand {
+    width: 50%;
+  }
+  .form-control {
+    width: 204px;
+  }
+  .d-flex {
+    margin-left: 0px;
+  }
+  .nav-icon {
+    right: 6px;
+    top: 215px;
+  }
+  .speedDial {
+    position: fixed;
+    right: 1vmax;
+    top: 8.5vmax;
+  }
+  .nav-link::after {
+    content: "";
+    left: 0;
+    width: 0;
+  }
+}

@@ -1,0 +1,18 @@
+.content-1,.content-2,.content-3{
+    padding: 0px 100px;
+}
+
+.about_logo{
+    padding: 22px 0px;
+}
+
+.about_logo > img{ 
+    height: 200px;
+    width: 200px;
+}
+
+@media screen and (max-width:760px) {
+    .content-1,.content-2,.content-3{
+        padding: 0px 18px;
+    }
+}
