@@ -35,9 +35,6 @@ const Cart = () => {
   const checkoutHandler = () => {
     navigate("/login?redirect=shipping");
   };
-  if (Cart) {
-
-  }
 
   return (
     <Fragment>
@@ -81,8 +78,9 @@ const Cart = () => {
                       +
                     </button>
                   </div>
-                  <p className="cartSubtotal">{`₹${item.price * item.quantity
-                    }`}</p>
+                  <p className="cartSubtotal">{`₹${
+                    item.price * item.quantity
+                  }`}</p>
                 </div>
               ))}
             <div className="cartGrossProfit">

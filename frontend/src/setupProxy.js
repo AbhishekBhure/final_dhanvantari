@@ -4,7 +4,7 @@ module.exports = function (app) {
   app.use(
     "/api",
     createProxyMiddleware({
-      target: "http://192.168.233.42:4000", //wi-fi
+      target: "http://192.168.56.1:4000 ", //wi-fi
       // target: "http://192.168.39.200:4000",
 
       // target: " http://192.168.0.175:4000 ", //mobile
