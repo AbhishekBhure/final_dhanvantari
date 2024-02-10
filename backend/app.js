@@ -4,6 +4,7 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
 const dotenv = require("dotenv");
+const cors = require("cors");
 
 const errorMiddleware = require("./middleware/error");
 
@@ -18,6 +19,7 @@ app.use(
   })
 );
 app.use(fileUpload());
+app.use(cors());
 
 // Route imports
 const product = require("./routes/productRoute");
