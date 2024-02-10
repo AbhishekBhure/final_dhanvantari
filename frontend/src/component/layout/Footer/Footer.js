@@ -30,12 +30,12 @@ const Footer = () => {
           <h4>Follow Us</h4>
           <a href="http://instagram.com/dhanvantari_gadag">
             Instagram
-            <InstagramIcon style={{ "padding-left": "7px" }} />
+            <InstagramIcon style={{ paddingLeft: "7px" }} />
           </a>
           {/* <a href="http://youtube.com/6packprogramemr">Youtube</a> */}
           <a href="/">
             Facebook
-            <FacebookIcon style={{ "padding-left": "7px" }} />
+            <FacebookIcon style={{ paddingLeft: "7px" }} />
           </a>
         </div>
       </footer>

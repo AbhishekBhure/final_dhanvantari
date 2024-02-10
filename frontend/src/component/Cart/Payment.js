@@ -3,7 +3,7 @@ import CheckoutSteps from "./CheckoutSteps";
 import { useDispatch, useSelector } from "react-redux";
 import MetaData from "../layout/MetaData";
 import { Typography } from "@material-ui/core";
-import { useAlert } from "react-alert"
+import { useAlert } from "react-alert";
 import {
   CardNumberElement,
   CardCvcElement,
@@ -11,12 +11,12 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
-import axios from "axios"
+import axios from "axios";
 import "./payment.css";
 import CreditCardIcon from "@material-ui/icons/CreditCard";
 import EventIcon from "@material-ui/icons/Event";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
-import { createOrder, clearErrors } from "../../actions/orderAction"
+import { createOrder, clearErrors } from "../../actions/orderAction";
 import { useNavigate } from "react-router-dom";
 
 const Payment = () => {
@@ -35,7 +35,7 @@ const Payment = () => {
   const { error } = useSelector((state) => state.newOrder);
   const paymentData = {
     amount: Math.round(orderInfo.totalPrice * 100),
-  }
+  };
 
   const order = {
     shippingInfo,
@@ -44,9 +44,7 @@ const Payment = () => {
     taxPrice: orderInfo.tax,
     shippingPrice: orderInfo.shippingCharges,
     totalPrice: orderInfo.totalPrice,
-
-  }
-
+  };
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -56,12 +54,11 @@ const Payment = () => {
       const config = {
         headers: {
           "content-Type": "application/json",
-
         },
       };
 
       const { data } = await axios.post(
-        "/api/v1/payment/process",
+        "https://dhanvantari-backend.onrender.com/api/v1/payment/process",
         paymentData,
         config
       );
@@ -84,7 +81,6 @@ const Payment = () => {
               country: shippingInfo.country,
             },
           },
-
         },
       });
       if (result.error) {
@@ -98,15 +94,14 @@ const Payment = () => {
           };
 
           dispatch(createOrder(order));
-          navigate("/success")
+          navigate("/success");
         } else {
-          alert.error("there is some issue while processing payment")
+          alert.error("there is some issue while processing payment");
         }
       }
     } catch (error) {
       payBtn.current.disabled = false;
       alert.error(error.response.data.message);
-
     }
   };
 
@@ -115,7 +110,7 @@ const Payment = () => {
       alert.error(error);
       dispatch(clearErrors());
     }
-  }, [dispatch, error, alert])
+  }, [dispatch, error, alert]);
 
   return (
     <Fragment>
